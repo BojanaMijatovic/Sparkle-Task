@@ -1,0 +1,39 @@
+$primary-font: 'Raleway', sans-serif;
+
+@mixin heading1 {
+   font {
+     family: $primary-font;
+     weight: 400;
+     size: 26px;
+   }
+   color: #fff;
+   text-align: center;
+}
+
+@mixin heading2 {
+  @include heading1;
+  color: $secondary-color;
+}
+
+@mixin heading3 {
+    @include heading2;
+    font {
+      size: 20px;
+      weight: 500;
+    }
+}
+
+@mixin hero-text {
+  @include heading1;
+  font-size: 17px;
+}
+
+@mixin paragraph {
+  @include heading3;
+  font-weight: 400;
+}
+
+@mixin card-text {
+  @include paragraph;
+  font-size: 16px;
+}

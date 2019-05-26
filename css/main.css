@@ -1,0 +1,131 @@
+header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 1250px; }
+  header .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px; }
+    header .logo img {
+      width: 50px;
+      height: 50px; }
+
+nav {
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  nav .menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFE500;
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: translate(100%, 0%);
+    -ms-transform: translate(100%, 0%);
+    transform: translate(100%, 0%);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    -o-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+    nav .menu__item {
+      margin-top: 100px; }
+    nav .menu li {
+      padding: 10px; }
+    nav .menu a {
+      cursor: pointer;
+      padding: 10px;
+      font-size: 20px;
+      color: #474747; }
+      nav .menu a:hover {
+        background: #e6cf03; }
+    nav .menu__dropdown {
+      padding-left: 20px; }
+
+.burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 45px;
+  height: 35px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .burger__toggle {
+    position: absolute;
+    right: 0px;
+    display: block;
+    width: 47px;
+    height: 35px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2; }
+  .burger span {
+    position: relative;
+    float: right;
+    clear: both;
+    margin-top: 5px;
+    margin-right: 9px;
+    display: block;
+    width: 35px;
+    height: 5px;
+    background: #FFE500;
+    border-radius: 3px;
+    z-index: 1;
+    -webkit-transform-origin: 4px 0px;
+    -ms-transform-origin: 4px 0px;
+    transform-origin: 4px 0px;
+    -webkit-transition: opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    -o-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+  .burger span:first-child {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; }
+  .burger span:nth-child(3) {
+    width: 30px; }
+  .burger span:nth-last-child(2) {
+    width: 25px;
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    transform-origin: 0% 100%; }
+  .burger input:checked ~ span:nth-child(2) {
+    opacity: 0;
+    -webkit-transform: rotate(45deg) scale(0.2, 0.2);
+    -ms-transform: rotate(45deg) scale(0.2, 0.2);
+    transform: rotate(45deg) scale(0.2, 0.2); }
+  .burger input:checked ~ span:nth-child(3) {
+    width: 35px;
+    opacity: 1;
+    -webkit-transform: rotate(45deg) translate(0px, -9px);
+    -ms-transform: rotate(45deg) translate(0px, -9px);
+    transform: rotate(45deg) translate(0px, -9px);
+    background: #474747; }
+  .burger input:checked ~ span:nth-last-child(2) {
+    width: 35px;
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) translate(2px, 7px);
+    -ms-transform: rotate(-45deg) translate(2px, 7px);
+    transform: rotate(-45deg) translate(2px, 7px);
+    background: #474747; }
+
+.burger input:checked ~ ul {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity: 1; }
