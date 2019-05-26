@@ -1,15 +1,15 @@
-// Base
-@import 'colors';
-@import 'fonts';
-@import 'mixins';
+//BASE
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/mixins';
 
 // Components
-@import 'header';
-@import 'hero';
-@import 'intro';
-@import 'services';
-@import 'stats';
-@import 'portfolio';
-@import 'video';
-@import 'team';
-@import 'footer';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/intro';
+@import 'components/services';
+@import 'components/stats';
+@import 'components/portfolio';
+@import 'components/video';
+@import 'components/team';
+@import 'components/footer';
