@@ -1,0 +1,44 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+
+.stats {
+  background: $dark-background;
+  padding: 30px 0;
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+  }
+  &__number {
+    width: 270px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    span {
+      @include hero-text;
+      display: block;
+      padding-bottom: 5px;
+      color: $secondary-color;
+    }
+    p {
+      @include hero-text;
+      color: $secondary-color;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+
+// MEDIA QUERY
+
+@media only screen and (min-width: 612px) {
+  .stats__container {
+    padding: 50px 10px 40px 10px;
+  }
+}

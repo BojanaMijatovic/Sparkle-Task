@@ -1,0 +1,63 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('../img/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  .hero {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    h1 {
+    @include heading1;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    padding: 20px;
+    line-height: 27px;
+    }
+    p {
+      @include hero-text;
+      padding-bottom: 30px;
+      letter-spacing: 5px;
+      line-height: 25px;
+    }
+    &__button {
+      @include button;
+    }
+  }
+  .arrow-down {
+    display: none;
+    background: red;
+    width: 50px;
+    height: 50px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+//MEDIA Querie
+@media only screen and (min-width: 760px) {
+  .home {
+    height: 700px;
+  }
+}

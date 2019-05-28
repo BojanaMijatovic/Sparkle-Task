@@ -2,15 +2,24 @@
 @mixin button {
   position: relative;
   margin: 0 auto;
-  width: 170px;
+  padding: 10px 20px;
   height: 45px;
+  border: none;
+  cursor: pointer;
   font {
     family: Raleway;
     size: 13px;
     weight: 700;
   }
+  text-transform: uppercase;
+  letter-spacing: 5px;
   color: $secondary-color;
   background-color: $primary-color;
+  &:hover {
+    border: solid $primary-color 1px;
+    background: none;
+    color: #fff;
+  }
 }
 
 @mixin container {

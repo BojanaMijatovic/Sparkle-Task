@@ -1,0 +1,138 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+
+.services {
+  background: $light-background;
+  padding: 30px 0;
+  &__content {
+    @include container;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &--text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        @include heading2;
+        padding: 20px;
+        text-transform: uppercase;
+      }
+      p {
+        @include paragraph;
+        line-height: 24px;
+        max-width: 600px;
+        padding: 10px 20px 30px;
+      }
+    }
+    &--cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    &--card {
+        width: 270px;
+        padding: 10px;
+    }
+    &--upper-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      box-shadow: 0px 0px 10px 0px rgba(37, 39, 42, .3);
+      .web_design {
+        padding: 20px 70px 15px;
+      }
+      h3 {
+        @include heading3;
+        padding: 20px 50px 15px;
+        text-transform: uppercase;
+        line-height: 24px
+      }
+      p {
+        @include card-text;
+        padding-top: 15px;
+        line-height: 24px;
+      }
+    }
+    &--bottom-card {
+      margin-bottom: 25px;
+      padding: 10px;
+      background: #fff;
+      box-shadow: 0px 0px 10px 0px rgba(37, 39, 42, .3);
+      div:nth-child(1) p {
+      padding-top: 0;
+      }
+      .bar {
+        p {
+          @include card-text;
+          text-align: left;
+          padding: 10px 0 5px;
+        }
+        span {
+          position: relative;
+          display: block;
+          height: 5px;
+          width: 100%;
+          background: $light-background;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: $primary-color;
+          }
+        }
+        &__ps span::before {
+          width: 90%;
+        }
+        &__ai span::before {
+          width: 97%;
+        }
+        &__id span::before,
+        &__js span::before {
+          width: 70%;
+        }
+        &__ui span::before {
+          width: 96%;
+        }
+        &__ux span::before {
+          width: 88%;
+        }
+        &__responsive span::before {
+          width: 95%;
+        }
+        &__html span::before,
+        &__css span::before {
+          width: 98%;
+        }
+        &__c span::before {
+          width: 85%;
+        }
+        &__java span::before {
+          width: 86%;
+        }
+        &__swift span::before {
+          width: 84%;
+        }
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERY
+@media only screen and (min-width: 542px) {
+    .services__content--cards {
+      padding-top: 40px;
+    }
+}

@@ -1,0 +1,141 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+.portfolio {
+  padding: 30px 10px;
+  &__container {
+      @include container;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+   &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        @include heading2;
+        padding: 20px;
+        text-transform: uppercase;
+      }
+      p {
+        @include paragraph;
+        line-height: 24px;
+        max-width: 600px;
+        padding: 10px 20px 30px;
+      }
+   }
+   // TABS
+  &__gallery {
+    padding: 0;
+    &--tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        border-top: solid 1px $secondary-color;
+      }
+      li {
+        padding: 20px;
+        width: 150px;
+      }
+      a {
+        @include paragraph;
+        padding: 20px;
+        font-weight: 500;
+      }
+      img {
+        padding: 30px;
+      }
+    }
+    &--graphic {
+      order: 1;
+    }
+    &--development {
+      order: 2;
+      border-bottom: solid 1px $secondary-color;
+    }
+  }
+  // GALLERY
+  &__images {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__image {
+      position: relative;
+    img {
+      flex-basis: 320px;
+    }
+  }
+  &__text-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px 30px;
+    background: #fff;
+    z-index: 4;
+    h3 {
+      @include heading3;
+      padding: 30px 0 10px;
+    }
+    p {
+      @include card-text;
+      padding: 30px 0 20px;
+      line-height: 24px;
+    }
+  }
+  &__background-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 235px;
+    height: 260px;
+    background: $primary-color;
+  }
+  button {
+    @include button;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+
+// MEDIA QUERIE
+
+@media only screen and (min-width: 768px) {
+  .portfolio {
+    padding-bottom: 70px;
+  }
+  .portfolio__gallery {
+    &--tabs {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &--graphic {
+      order: 0;
+      border-bottom: solid 1px $secondary-color;
+    }
+    &--development {
+      order: 0;
+    }
+  }
+}

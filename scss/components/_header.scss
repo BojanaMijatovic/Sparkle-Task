@@ -4,14 +4,18 @@
 
 // HEADER AND NAVIGATION
 header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
+  background: $secondary-color;
+  z-index: 5;
   @include container;
   .logo {
     position: absolute;
-    top: 10px;
     left: 10px;
+    top: 10px;
     img {
       width: 50px;
       height: 50px;
@@ -20,7 +24,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  wdith: 100%;
   height: 100%;
   text-align: center;
   .menu {
@@ -53,12 +57,12 @@ nav {
     }
     &__dropdown {
       padding-left: 20px;
+      display: none;
     }
   }
 }
   .burger {
     position: absolute;
-    top: 10px;
     right: 10px;
     display: block;
     width:45px;
@@ -128,3 +132,62 @@ nav {
      transform:  scale(1.0, 1.0);
      opacity: 1;
    }
+
+
+@media only screen and (min-width: 1024px) {
+   header {
+     display: flex;
+     justify-content: space-between;
+     background: transparent;
+   }
+   nav {
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: flex-end;
+     width: 50%;
+     .menu {
+       position: relative;
+       top: 26px;
+       display: flex;
+       justify-content: flex-start;
+       height: 60px;
+       width: 600px;
+       transform: translate(0%, 0%);
+       background: none;
+       transform-origin: 50% 50% 0;
+       li {
+         display: inline;
+         padding: 0 20px;
+       }
+       &__item {
+         margin-top: 0;
+       }
+       a {
+         padding: 10px 20px;
+         cursor: pointer;
+         color: $primary-color;
+         &:hover {
+           border-radius: 10px;
+           background-color: $primary-color;
+           color: $secondary-color;
+         }
+       }
+   }
+    .burger  {
+         &__toggle {
+         display: none;
+         }
+         span {
+           display: none;
+         }
+       }
+    }
+}
+
+@media only screen and (min-width: 1204px) {
+  nav {
+     width: 60%;
+  }
+}

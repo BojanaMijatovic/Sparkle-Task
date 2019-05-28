@@ -1,0 +1,14 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+.video {
+  position: relative;
+  button {
+    @include button;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

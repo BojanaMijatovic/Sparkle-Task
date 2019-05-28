@@ -1,0 +1,34 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+
+.intro {
+  @include container;
+  padding: 40px;
+  height: 100%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  }
+  &__text {
+    @include paragraph;
+    line-height: 24px;
+    max-width: 580px;
+    padding: 50px 42px 10px;
+    text-align: justify;
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .intro {
+    padding: 150px 10px;
+  }
+}
