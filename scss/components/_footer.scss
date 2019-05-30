@@ -1,0 +1,104 @@
+@import "base/colors";
+@import "base/fonts";
+@import "base/mixins";
+
+.footer {
+  background: $dark-background;
+  li {
+    display: block;
+  }
+  a {
+    display: block;
+  }
+  &__content {
+    @include container;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  &__list {
+    padding: 20px;
+    &--one {
+      p {
+        @include card-text;
+        color: #fff;
+        text-align: left;
+        padding: 20px 0;
+        max-width: 370px;
+      }
+      p:nth-last-child(1) {
+        padding-top: 0;
+      }
+    }
+    &--two {
+      p {
+        @include  heading3;
+        color: #fff;
+        text-align: left;
+        padding: 0 10px 10px;
+      }
+      a {
+        @include card-text;
+        padding: 10px;
+        text-align: left;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+          background: $secondary-color;
+        }
+      }
+    }
+    &--four {
+      p {
+        @include heading3;
+        color: #fff;
+        text-align: left;
+        padding: 0 0 10px;
+      }
+      p:nth-child(2) {
+        @include card-text;
+        max-width: 370px;
+        color: #fff;
+        text-align: left;
+        padding: 10px 0;
+      }
+      button {
+        @include button;
+        text-transform: lowercase;
+        letter-spacing: normal;
+        margin: 20px 0;
+        padding: 10px 60px;
+        background: $testimonials-background;
+        border-radius: 20px;
+      }
+    }
+    &--social {
+        margin-top: 10px;
+      li {
+        display: inline-block;
+        padding: 10px 5px;
+      }
+      a {
+        display: inline;
+        background: #FDFDFD;
+        padding: 16px 10px 6px;
+        border-radius: 50%;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+// Media QUERY
+
+@media only screen and (min-width: 592px) and (max-width:1200px) {
+  .footer__list {
+    width: calc(100% / 2);
+  }
+}

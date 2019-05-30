@@ -17,10 +17,8 @@ $primary-font: 'Raleway', sans-serif;
 
 @mixin heading3 {
     @include heading2;
-    font {
-      size: 20px;
-      weight: 500;
-    }
+    font-size: 20px;
+    font-weight: 500;
 }
 
 @mixin hero-text {
